@@ -7,6 +7,7 @@
 //
 
 #import "ZTPasswordGenerator.h"
+#import <Security/SecRandom.h>
 
 typedef struct ZTCharacterRange {
     NSInteger start;
@@ -18,15 +19,7 @@ ZTCharacterRange ZTMakeCharacterRange(NSInteger start, NSInteger end) {
     return range;
 }
 
-static const NSString *kLatinMetacharacterSet = @"!@#%&*_+-=;<>,./?;:{}/|~";
-
 @interface ZTPasswordGenerator ()
-@property (nonatomic) BOOL includesOneLatinUppercase;
-@property (nonatomic) BOOL includesOneLatinLowercase;
-@property (nonatomic) BOOL includesOneLatinNumber;
-@property (nonatomic) BOOL includesOneLatinMetacharacter;
-@property (nonatomic) BOOL excludesRepeats;
-@property (nonatomic) unichar previousCharacter;
 - (NSString *)_generate;
 @end
 
@@ -73,6 +66,10 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
 }
 
 - (NSString *)_generate {
+    static NSString *kLatinMetacharacterSet = @"!@#%&*_+-=;<>,./?;:{}/|~";
+    static NSString *kLatinDecimalSet = @"0123456789";
+    static NSString *kLatinUppercaseSet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    static NSString *kLatinLowercaseSet = @"abcdefghijklmnopqrstuvwxyz";
     NSString *password = nil;
     if (self.characterRanges == nil) {
         NSURL *plistURL = [[NSBundle mainBundle] URLForResource:@"ZTUTF8CharacterRanges" withExtension:@"plist"];
@@ -108,67 +105,51 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
             break;
         }
     }
-    BOOL filtered = NO;
-    do {
-        password = [self _randomStringFromCharacters:availableCharacters
-                                             setSize:setSize];
-        if (self.useCommonRestrictions) {
-            if ([self _stringPassesFilters:password]) {
-                filtered = YES;
-            }
-        } else { // if we're not filtering, set our flag to YES to end the while loop
-            filtered = YES;
-        }
-    } while (filtered == NO);
+    // here we actually generate the random password
+    password = [self _randomStringFromCharacters:availableCharacters
+                                         setSize:setSize];
+    if (self.useCommonRestrictions) {
+        password = [self _stringFromString:password withACharacterFromSet:kLatinMetacharacterSet];
+        password = [self _stringFromString:password withACharacterFromSet:kLatinUppercaseSet];
+        password = [self _stringFromString:password withACharacterFromSet:kLatinLowercaseSet];
+        password = [self _stringFromString:password withACharacterFromSet:kLatinDecimalSet];
+    }
     return password;
 }
 
-- (BOOL)_stringPassesFilters:(NSString *)string {
-    self.includesOneLatinUppercase      = NO;
-    self.includesOneLatinLowercase      = NO;
-    self.includesOneLatinNumber         = NO;
-    self.includesOneLatinMetacharacter  = NO;
-    self.excludesRepeats                = YES;
-//    ZTCharacterRange lowercaseLatin = ZTMakeCharacterRange(0x0061, 0x007A);
-//    ZTCharacterRange uppercaseLatin = ZTMakeCharacterRange(0x0041, 0x005A);
-//    ZTCharacterRange decimalLatin = ZTMakeCharacterRange(0x0030, 0x0039);
-    
-    /*
-     * Following trick allows us to correctly enumerate over composed character sequences
-     * Ole Begemann, I could kiss you
-     * http://www.objc.io/issue-9/unicode.html
-     */
-    NSRange fullRange = NSMakeRange(0, [string length]);
-    [string enumerateSubstringsInRange:fullRange
-                               options:NSStringEnumerationByComposedCharacterSequences
-                            usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-                                unichar ch = [substring characterAtIndex:0];
-                                if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:ch]) {
-                                    self.includesOneLatinUppercase = YES;
-                                }
-                                if ([[NSCharacterSet lowercaseLetterCharacterSet] characterIsMember:ch]) {
-                                    self.includesOneLatinLowercase = YES;
-                                }
-                                if ([[NSCharacterSet decimalDigitCharacterSet] characterIsMember:ch]) {
-                                    self.includesOneLatinNumber = YES;
-                                }
-                                if ([[NSCharacterSet punctuationCharacterSet] characterIsMember:ch]) {
-                                    self.includesOneLatinMetacharacter = YES;
-                                }
-                                if (ch == self.previousCharacter) {
-                                    self.excludesRepeats = NO;
-                                }
-                                self.previousCharacter = ch;
-                            }];
-    if (self.includesOneLatinMetacharacter &&
-        self.includesOneLatinNumber &&
-        self.includesOneLatinUppercase &&
-        self.includesOneLatinLowercase &&
-        self.excludesRepeats == YES) {
-        return YES;
-    } else {
-        return NO;
+- (NSString *)_stringFromString:(NSString *)string withACharacterFromSet:(NSString *)characterString {
+    NSCharacterSet *metacharSet = [NSCharacterSet characterSetWithCharactersInString:characterString];
+    if ([string rangeOfCharacterFromSet:metacharSet].location == NSNotFound) {
+        // generate a random character from this set
+        unichar ch = [self _randomCharacterFromString:characterString];
+        // now pick a random index in the password to drop this guy
+        string = [self _stringByRandomlyInsertingCharacter:ch intoString:string];
     }
+    return string;
+}
+
+- (NSString *)_stringByRandomlyInsertingCharacter:(unichar)character intoString:(NSString *)string {
+    // generate a random index
+    NSInteger setSize = [string length];
+    unsigned int randomIndex = [self _randomIndexForSetSize:setSize];
+    NSString *result = [string stringByReplacingCharactersInRange:NSMakeRange(randomIndex, 1) withString:string];
+    return result;
+}
+
+- (unichar)_randomCharacterFromString:(NSString *)string {
+    // generate a random character from this set
+    NSInteger setSize = [string length];
+    unichar ch = [string characterAtIndex:[self _randomIndexForSetSize:setSize]];
+    return ch;
+}
+
+- (unsigned int)_randomIndexForSetSize:(NSInteger)size {
+    NSInteger bytesNeeded = 1 * sizeof(NSInteger);
+    NSMutableData *data = [NSMutableData dataWithCapacity:bytesNeeded];
+    SecRandomCopyBytes(kSecRandomDefault, bytesNeeded, [data mutableBytes]);
+    unsigned int *randomInt = (unsigned int *) &[data mutableBytes][0];
+    unsigned int randomIndex = *randomInt % size;
+    return randomIndex;
 }
 
 - (NSString *)_randomStringFromCharacters:(NSInteger[])characters
@@ -178,13 +159,20 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
     NSMutableData *data = [NSMutableData dataWithCapacity:bytesNeeded];
     SecRandomCopyBytes(kSecRandomDefault, bytesNeeded, [data mutableBytes]);
     NSMutableString *password = [NSMutableString stringWithCapacity:self.length];
+    // we set it to -1 so it's not an unitialized value and to handle the first pass
+    unichar previousCharacter = -1;
     for (NSInteger i = 0; i < self.length; i++) {
         unichar ch;
-        ch = [self _characterFromRandomData:data
-                                 characters:characters
-                                    setSize:setSize
-                                   forIndex:i];
+        // do while to ensure we don't repeat ourselves (e.g. "ee")
+        do {
+            ch = [self _characterFromRandomData:data
+                                     characters:characters
+                                        setSize:setSize
+                                       forIndex:i];
+        } while (self.useCommonRestrictions && previousCharacter == ch);
+        
         [password appendFormat:@"%C", ch];
+        previousCharacter = ch;
     }
     // don't return a mutable
     return [NSString stringWithString:password];
@@ -195,7 +183,7 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
                             setSize:(NSInteger)setSize
                            forIndex:(NSInteger)idx {
     unichar ch;
-    unsigned int *randomInt = (unsigned int *) &[data mutableBytes][idx*sizeof(int)];
+    unsigned int *randomInt = (unsigned int *) &[data mutableBytes][idx*sizeof(NSInteger)];
     unsigned int randomIndex = *randomInt % setSize;
     ch = (unichar)characters[randomIndex];
     return ch;

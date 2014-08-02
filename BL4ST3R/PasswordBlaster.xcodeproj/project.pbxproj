@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28083CBC198C7CAA00CA7100 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28083CBB198C7CAA00CA7100 /* Security.framework */; };
 		281F585D198872710095A817 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281F585C198872710095A817 /* Cocoa.framework */; };
 		281F5867198872710095A817 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281F5865198872710095A817 /* InfoPlist.strings */; };
 		281F5869198872710095A817 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5868198872710095A817 /* main.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28083CBB198C7CAA00CA7100 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		281F5859198872710095A817 /* Password Blaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Blaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		281F585C198872710095A817 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		281F585F198872710095A817 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28083CBC198C7CAA00CA7100 /* Security.framework in Frameworks */,
 				281F585D198872710095A817 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +117,7 @@
 		281F585B198872710095A817 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28083CBB198C7CAA00CA7100 /* Security.framework */,
 				281F585C198872710095A817 /* Cocoa.framework */,
 				281F587B198872710095A817 /* XCTest.framework */,
 				281F585E198872710095A817 /* Other Frameworks */,

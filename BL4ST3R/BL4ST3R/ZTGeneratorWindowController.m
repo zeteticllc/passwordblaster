@@ -33,14 +33,6 @@
     return nil;
 }
 
-//- (void)awakeFromNib {
-//    // first, we're going to want the shared generator object loaded up, as we're binding to its values in the xib
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        self.passwordGenerator = [ZTPasswordGenerator sharedGenerator];
-//    });
-//}
-
 - (void)windowDidLoad {
     [super windowDidLoad];
     // over-ride point for UI intialization, but the xib loads lazy so call self.window before attempting to update UI
@@ -52,6 +44,8 @@
         self.seriesWindowController = swc;
         [swc release];
     }
+    // generate a password
+    [self refreshSuggestion:nil];
     // configure generator from NSUserDefaults
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //    self.passwordGenerator.length = [defaults integerForKey:@"ZTPGlength"];
