@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		281F585D198872710095A817 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281F585C198872710095A817 /* Cocoa.framework */; };
+		281F5867198872710095A817 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281F5865198872710095A817 /* InfoPlist.strings */; };
+		281F5869198872710095A817 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5868198872710095A817 /* main.m */; };
+		281F586D198872710095A817 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 281F586B198872710095A817 /* Credits.rtf */; };
+		281F5870198872710095A817 /* ZTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F586F198872710095A817 /* ZTAppDelegate.m */; };
+		281F5873198872710095A817 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281F5871198872710095A817 /* MainMenu.xib */; };
+		281F5875198872710095A817 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281F5874198872710095A817 /* Images.xcassets */; };
+		281F587C198872710095A817 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281F587B198872710095A817 /* XCTest.framework */; };
+		281F587D198872710095A817 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281F585C198872710095A817 /* Cocoa.framework */; };
+		281F5885198872710095A817 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281F5883198872710095A817 /* InfoPlist.strings */; };
+		281F5887198872710095A817 /* BL4ST3RTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5886198872710095A817 /* BL4ST3RTests.m */; };
+		281F5892198872A10095A817 /* ZTPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5891198872A10095A817 /* ZTPasswordGenerator.m */; };
+		281F5893198872A10095A817 /* ZTPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5891198872A10095A817 /* ZTPasswordGenerator.m */; };
+		281F589A198949D10095A817 /* ZTGeneratorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5898198949D10095A817 /* ZTGeneratorWindowController.m */; };
+		281F589B198949D10095A817 /* ZTGeneratorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F5898198949D10095A817 /* ZTGeneratorWindowController.m */; };
+		281F589C198949D10095A817 /* ZTGeneratorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281F5899198949D10095A817 /* ZTGeneratorWindowController.xib */; };
+		281F589D198949D10095A817 /* ZTGeneratorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281F5899198949D10095A817 /* ZTGeneratorWindowController.xib */; };
+		2822ABD81989690200AA7A29 /* ZTSeriesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2822ABD61989690200AA7A29 /* ZTSeriesWindowController.m */; };
+		2822ABD91989690200AA7A29 /* ZTSeriesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2822ABD71989690200AA7A29 /* ZTSeriesWindowController.xib */; };
+		28BB1C09198BF87E0038C522 /* ZTUTF8CharacterRanges.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28BB1C08198BF87E0038C522 /* ZTUTF8CharacterRanges.plist */; };
+		28BB1C0A198BF87E0038C522 /* ZTUTF8CharacterRanges.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28BB1C08198BF87E0038C522 /* ZTUTF8CharacterRanges.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		281F587E198872710095A817 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 281F5851198872710095A817 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 281F5858198872710095A817;
+			remoteInfo = BL4ST3R;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		281F5859198872710095A817 /* Password Blaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Blaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		281F585C198872710095A817 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		281F585F198872710095A817 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		281F5860198872710095A817 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		281F5861198872710095A817 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		281F5864198872710095A817 /* BL4ST3R-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BL4ST3R-Info.plist"; sourceTree = "<group>"; };
+		281F5866198872710095A817 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		281F5868198872710095A817 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		281F586A198872710095A817 /* BL4ST3R-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BL4ST3R-Prefix.pch"; sourceTree = "<group>"; };
+		281F586C198872710095A817 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		281F586E198872710095A817 /* ZTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTAppDelegate.h; sourceTree = "<group>"; };
+		281F586F198872710095A817 /* ZTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTAppDelegate.m; sourceTree = "<group>"; };
+		281F5872198872710095A817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		281F5874198872710095A817 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		281F587A198872710095A817 /* PasswordBlasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordBlasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		281F587B198872710095A817 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		281F5882198872710095A817 /* BL4ST3RTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BL4ST3RTests-Info.plist"; sourceTree = "<group>"; };
+		281F5884198872710095A817 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		281F5886198872710095A817 /* BL4ST3RTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BL4ST3RTests.m; sourceTree = "<group>"; };
+		281F5890198872A10095A817 /* ZTPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTPasswordGenerator.h; sourceTree = "<group>"; };
+		281F5891198872A10095A817 /* ZTPasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTPasswordGenerator.m; sourceTree = "<group>"; };
+		281F5897198949D10095A817 /* ZTGeneratorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTGeneratorWindowController.h; sourceTree = "<group>"; };
+		281F5898198949D10095A817 /* ZTGeneratorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTGeneratorWindowController.m; sourceTree = "<group>"; };
+		281F5899198949D10095A817 /* ZTGeneratorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZTGeneratorWindowController.xib; sourceTree = "<group>"; };
+		2822ABD51989690200AA7A29 /* ZTSeriesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSeriesWindowController.h; sourceTree = "<group>"; };
+		2822ABD61989690200AA7A29 /* ZTSeriesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSeriesWindowController.m; sourceTree = "<group>"; };
+		2822ABD71989690200AA7A29 /* ZTSeriesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZTSeriesWindowController.xib; sourceTree = "<group>"; };
+		28BB1C08198BF87E0038C522 /* ZTUTF8CharacterRanges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZTUTF8CharacterRanges.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		281F5856198872710095A817 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281F585D198872710095A817 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		281F5877198872710095A817 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281F587D198872710095A817 /* Cocoa.framework in Frameworks */,
+				281F587C198872710095A817 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		281F5850198872710095A817 = {
+			isa = PBXGroup;
+			children = (
+				281F5862198872710095A817 /* PasswordBlaster */,
+				281F5880198872710095A817 /* PasswordBlasterTests */,
+				281F585B198872710095A817 /* Frameworks */,
+				281F585A198872710095A817 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		281F585A198872710095A817 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				281F5859198872710095A817 /* Password Blaster.app */,
+				281F587A198872710095A817 /* PasswordBlasterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		281F585B198872710095A817 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				281F585C198872710095A817 /* Cocoa.framework */,
+				281F587B198872710095A817 /* XCTest.framework */,
+				281F585E198872710095A817 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		281F585E198872710095A817 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				281F585F198872710095A817 /* AppKit.framework */,
+				281F5860198872710095A817 /* CoreData.framework */,
+				281F5861198872710095A817 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		281F5862198872710095A817 /* PasswordBlaster */ = {
+			isa = PBXGroup;
+			children = (
+				281F586E198872710095A817 /* ZTAppDelegate.h */,
+				281F586F198872710095A817 /* ZTAppDelegate.m */,
+				281F5871198872710095A817 /* MainMenu.xib */,
+				281F5874198872710095A817 /* Images.xcassets */,
+				281F5863198872710095A817 /* Supporting Files */,
+				281F5890198872A10095A817 /* ZTPasswordGenerator.h */,
+				281F5891198872A10095A817 /* ZTPasswordGenerator.m */,
+				281F5897198949D10095A817 /* ZTGeneratorWindowController.h */,
+				281F5898198949D10095A817 /* ZTGeneratorWindowController.m */,
+				281F5899198949D10095A817 /* ZTGeneratorWindowController.xib */,
+				2822ABD51989690200AA7A29 /* ZTSeriesWindowController.h */,
+				2822ABD61989690200AA7A29 /* ZTSeriesWindowController.m */,
+				2822ABD71989690200AA7A29 /* ZTSeriesWindowController.xib */,
+				28BB1C08198BF87E0038C522 /* ZTUTF8CharacterRanges.plist */,
+			);
+			name = PasswordBlaster;
+			path = BL4ST3R;
+			sourceTree = "<group>";
+		};
+		281F5863198872710095A817 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				281F5864198872710095A817 /* BL4ST3R-Info.plist */,
+				281F5865198872710095A817 /* InfoPlist.strings */,
+				281F5868198872710095A817 /* main.m */,
+				281F586A198872710095A817 /* BL4ST3R-Prefix.pch */,
+				281F586B198872710095A817 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		281F5880198872710095A817 /* PasswordBlasterTests */ = {
+			isa = PBXGroup;
+			children = (
+				281F5886198872710095A817 /* BL4ST3RTests.m */,
+				281F5881198872710095A817 /* Supporting Files */,
+			);
+			name = PasswordBlasterTests;
+			path = BL4ST3RTests;
+			sourceTree = "<group>";
+		};
+		281F5881198872710095A817 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				281F5882198872710095A817 /* BL4ST3RTests-Info.plist */,
+				281F5883198872710095A817 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		281F5858198872710095A817 /* PasswordBlaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 281F588A198872710095A817 /* Build configuration list for PBXNativeTarget "PasswordBlaster" */;
+			buildPhases = (
+				281F5855198872710095A817 /* Sources */,
+				281F5856198872710095A817 /* Frameworks */,
+				281F5857198872710095A817 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasswordBlaster;
+			productName = BL4ST3R;
+			productReference = 281F5859198872710095A817 /* Password Blaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		281F5879198872710095A817 /* PasswordBlasterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 281F588D198872710095A817 /* Build configuration list for PBXNativeTarget "PasswordBlasterTests" */;
+			buildPhases = (
+				281F5876198872710095A817 /* Sources */,
+				281F5877198872710095A817 /* Frameworks */,
+				281F5878198872710095A817 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				281F587F198872710095A817 /* PBXTargetDependency */,
+			);
+			name = PasswordBlasterTests;
+			productName = BL4ST3RTests;
+			productReference = 281F587A198872710095A817 /* PasswordBlasterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		281F5851198872710095A817 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Zetetic;
+				TargetAttributes = {
+					281F5879198872710095A817 = {
+						TestTargetID = 281F5858198872710095A817;
+					};
+				};
+			};
+			buildConfigurationList = 281F5854198872710095A817 /* Build configuration list for PBXProject "PasswordBlaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 281F5850198872710095A817;
+			productRefGroup = 281F585A198872710095A817 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				281F5858198872710095A817 /* PasswordBlaster */,
+				281F5879198872710095A817 /* PasswordBlasterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		281F5857198872710095A817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2822ABD91989690200AA7A29 /* ZTSeriesWindowController.xib in Resources */,
+				281F589C198949D10095A817 /* ZTGeneratorWindowController.xib in Resources */,
+				281F5867198872710095A817 /* InfoPlist.strings in Resources */,
+				28BB1C09198BF87E0038C522 /* ZTUTF8CharacterRanges.plist in Resources */,
+				281F5875198872710095A817 /* Images.xcassets in Resources */,
+				281F586D198872710095A817 /* Credits.rtf in Resources */,
+				281F5873198872710095A817 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		281F5878198872710095A817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281F5885198872710095A817 /* InfoPlist.strings in Resources */,
+				281F589D198949D10095A817 /* ZTGeneratorWindowController.xib in Resources */,
+				28BB1C0A198BF87E0038C522 /* ZTUTF8CharacterRanges.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		281F5855198872710095A817 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281F5870198872710095A817 /* ZTAppDelegate.m in Sources */,
+				2822ABD81989690200AA7A29 /* ZTSeriesWindowController.m in Sources */,
+				281F589A198949D10095A817 /* ZTGeneratorWindowController.m in Sources */,
+				281F5892198872A10095A817 /* ZTPasswordGenerator.m in Sources */,
+				281F5869198872710095A817 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		281F5876198872710095A817 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281F5893198872A10095A817 /* ZTPasswordGenerator.m in Sources */,
+				281F5887198872710095A817 /* BL4ST3RTests.m in Sources */,
+				281F589B198949D10095A817 /* ZTGeneratorWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		281F587F198872710095A817 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 281F5858198872710095A817 /* PasswordBlaster */;
+			targetProxy = 281F587E198872710095A817 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		281F5865198872710095A817 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281F5866198872710095A817 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		281F586B198872710095A817 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281F586C198872710095A817 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		281F5871198872710095A817 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281F5872198872710095A817 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		281F5883198872710095A817 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				281F5884198872710095A817 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		281F5888198872710095A817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		281F5889198872710095A817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		281F588B198872710095A817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BL4ST3R/BL4ST3R-Prefix.pch";
+				INFOPLIST_FILE = "BL4ST3R/BL4ST3R-Info.plist";
+				PRODUCT_NAME = "Password Blaster";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		281F588C198872710095A817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BL4ST3R/BL4ST3R-Prefix.pch";
+				INFOPLIST_FILE = "BL4ST3R/BL4ST3R-Info.plist";
+				PRODUCT_NAME = "Password Blaster";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		281F588E198872710095A817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BL4ST3R.app/Contents/MacOS/BL4ST3R";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BL4ST3R/BL4ST3R-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BL4ST3RTests/BL4ST3RTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		281F588F198872710095A817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BL4ST3R.app/Contents/MacOS/BL4ST3R";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BL4ST3R/BL4ST3R-Prefix.pch";
+				INFOPLIST_FILE = "BL4ST3RTests/BL4ST3RTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		281F5854198872710095A817 /* Build configuration list for PBXProject "PasswordBlaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				281F5888198872710095A817 /* Debug */,
+				281F5889198872710095A817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		281F588A198872710095A817 /* Build configuration list for PBXNativeTarget "PasswordBlaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				281F588B198872710095A817 /* Debug */,
+				281F588C198872710095A817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		281F588D198872710095A817 /* Build configuration list for PBXNativeTarget "PasswordBlasterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				281F588E198872710095A817 /* Debug */,
+				281F588F198872710095A817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 281F5851198872710095A817 /* Project object */;
+}
