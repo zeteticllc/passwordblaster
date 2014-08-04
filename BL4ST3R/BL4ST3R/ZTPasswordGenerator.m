@@ -34,10 +34,10 @@ ZTCharacterRange ZTMakeCharacterRange(NSInteger start, NSInteger end) {
 - (id)init {
     self = [super init];
     if (self != nil) {
-        _length = 16;
+        _length = 12;
         _seriesLength = 10;
         _useExtendedUTF8Set = YES;
-        _useCommonRestrictions = NO;
+        _useCommonRestrictions = YES;
         _characterRanges = nil;
     }
     return self;
@@ -122,6 +122,8 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
     if ([string rangeOfCharacterFromSet:metacharSet].location == NSNotFound) {
         // generate a random character from this set
         unichar ch = [self _randomCharacterFromString:characterString];
+        // for now append to the end because we may need the other chars in the string as well
+//        string = [string stringByAppendingFormat:@"%C", ch];
         // now pick a random index in the password to drop this guy
         string = [self _stringByRandomlyInsertingCharacter:ch intoString:string];
     }
@@ -132,8 +134,11 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
     // generate a random index
     NSInteger setSize = [string length];
     unsigned int randomIndex = [self _randomIndexForSetSize:setSize];
-    NSString *result = [string stringByReplacingCharactersInRange:NSMakeRange(randomIndex, 1) withString:string];
-    return result;
+    NSString *insertString = [NSString stringWithFormat:@"%C", character];
+    NSMutableString *copiedString = [[string mutableCopy] autorelease];
+    [copiedString insertString:insertString atIndex:randomIndex];
+//    NSString *result = [string stringByReplacingCharactersInRange:NSMakeRange(randomIndex, 1) withString:insertString];
+    return [NSString stringWithString:copiedString];
 }
 
 - (unichar)_randomCharacterFromString:(NSString *)string {
@@ -163,14 +168,17 @@ static ZTPasswordGenerator *__sharedGenerator = nil;
     unichar previousCharacter = -1;
     for (NSInteger i = 0; i < self.length; i++) {
         unichar ch;
-        // do while to ensure we don't repeat ourselves (e.g. "ee")
-        do {
+        ch = [self _characterFromRandomData:data
+                                 characters:characters
+                                    setSize:setSize
+                                   forIndex:i];
+        while (self.useCommonRestrictions && ch == previousCharacter) {
+            NSInteger idx = [self _randomIndexForSetSize:setSize];
             ch = [self _characterFromRandomData:data
                                      characters:characters
                                         setSize:setSize
-                                       forIndex:i];
-        } while (self.useCommonRestrictions && previousCharacter == ch);
-        
+                                       forIndex:idx];
+        }
         [password appendFormat:@"%C", ch];
         previousCharacter = ch;
     }
