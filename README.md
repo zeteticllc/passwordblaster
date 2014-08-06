@@ -1,4 +1,4 @@
-passwordblaster
-===============
+Password Blaster
+================
 
-A simple password generator for creating random passwords from a selected Unicode ranges
+A simple password generator for creating random passwords from selected Unicode ranges (see ZTUTF8CharacterRanges.plist)
